@@ -1,0 +1,9 @@
+---
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Install Package System
+  apt: name={{item}} state=present
+  with_items:
+      - "{{sys_packages}}"
+
